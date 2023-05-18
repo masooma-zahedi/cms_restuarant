@@ -53,5 +53,24 @@ function delete_menu($id){
     mysqli_query($connect,$sql);
 }
 
+function showedit_menu($id){
+    $connect = config();
+    $sql = "SELECT * FROM menu_tbl WHERE id = '$id'";
+    $row = mysqli_query($connect,$sql);
+    $res = mysqli_fetch_assoc($row);
+    return $res;
+}
+// ///////////////
+function edit_menu($data,$id){
+    // var_dump($data);
+    // var_dump($id);die;
+    $connect = config();
+    $sql = "UPDATE menu_tbl SET title='$data[title]', url='$data[url]', status='$data[status]', sort='$data[sort]', chid='$data[parent]' WHERE id ='$id' ";
+    mysqli_query($connect, $sql);
+}
+
+
+
+
 
 include_once "login.php";

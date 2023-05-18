@@ -1,4 +1,3 @@
-<h2>list menu</h2>
 <div class="listmenu">
     <div class="card mb-5 ">
         <h2 class="card-body text-center text-warning">
@@ -45,7 +44,7 @@
           }
         ?>
       </td>
-      <td><a href=""><i class="fas fa-edit" style="color:brown"></i></a></td>
+      <td><a href="dashbord.php?m=menu&p=edit&id=<?php echo $list['id'] ?>""><i class="fas fa-edit" style="color:brown"></i></a></td>
       <td><a href="dashbord.php?m=menu&p=delete&id=<?php echo $list['id'] ?>"><i class="fa-solid fa-trash" style="color:red"></a></i></td>
     </tr>
     <?php
