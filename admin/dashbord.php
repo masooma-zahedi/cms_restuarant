@@ -1,5 +1,8 @@
 <?php
-session_start();
+include_once "../include/functions.php";
+if(!isset($_SESSION['username'])){
+    header("location:index.php?login=first");
+}
 ?>
 
 <!DOCTYPE html>
@@ -15,6 +18,8 @@ session_start();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="sabaStyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- font awsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
@@ -46,12 +51,15 @@ session_start();
             <div class="col-9 border border-primary">
                 <section class="wrapper ">
                     <?php
-                        if(isset($_GET['m']) && isset($_GET['p'])){
-                            $m = $_GET["m"];
-                            $p = $_GET["p"];
-                            include_once "$m/$p.php";
+                        // if(isset($_GET['m']) && isset($_GET['p'])){
+                        //     $m = $_GET["m"];
+                        //     $p = $_GET["p"];
+                        //     include_once "$m/$p.php";
 
-                        }
+                        // }
+                        @$m = $_GET["m"]?$_GET['m']:'index' ;
+                        @$p = $_GET["p"]?$_GET['p']:'index ';
+                        include_once "$m/$p.php";
                     ?>
                 </section>
             </div>

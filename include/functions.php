@@ -9,4 +9,31 @@ function config(){
     return $connect;
 }
 
+function add_menu($data){
+    $connect = config();
+    $sql= "INSERT INTO menu_tbl (title,url,status,chid,sort) VALUES ('$data[name]','$data[url]','$data[status]','$data[parent]',' $data[sort]')";
+     mysqli_query($connect,$sql);
+}
+
+function submenu(){
+    $connect = config();
+    $sql = "SELECT * FROM menu_tbl WHERE chid = '0'";
+    $row = mysqli_query($connect,$sql);
+    while($res = mysqli_fetch_assoc($row)){
+        $result[] = $res;
+    }
+    return $result;
+}
+
+function list_menu_admin(){
+    $connect = config();
+    $sql ="SELECT * FROM menu_tbl";
+    $row = mysqli_query($connect,$sql);
+    while($res = mysqli_fetch_assoc($row)){
+        $result[] = $res;
+    }
+    return $result;
+}
+
+
 include_once "login.php";

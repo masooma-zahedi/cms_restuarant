@@ -1,6 +1,5 @@
 <?php
 include_once "../include/functions.php";
-// include_once "../include/login.php";
   if(isset($_POST['btn'])){
     $data= $_POST['frm'];
     user_login($data);
