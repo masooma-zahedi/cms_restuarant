@@ -29,11 +29,8 @@
                 echo "Negetiv";
             }
             else{
-                $connect = config();
-                $sql = "SELECT * FROM menu_tbl WHERE id ='$list[chid]'";
-                $row = mysqli_query($connect,$sql);
-                $res = mysqli_fetch_assoc($row);
-                echo $res['title'];
+                $parent = selectparent($list['chid']);
+                echo $parent;
             }
         ?>
       </td>
