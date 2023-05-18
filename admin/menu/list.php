@@ -12,6 +12,7 @@
       <th scope="col">Url</th>
       <th scope="col">Major title</th>
       <th scope="col">Sort</th>
+      <th scope="col">Status</th>
       <th scope="col">Edit</th>
       <th scope="col">Delete</th>
     </tr>
@@ -35,8 +36,17 @@
         ?>
       </td>
       <td><?php echo $list['sort'] ?></td>
+      <td><?php 
+          if($list['status'] == "1"){
+            echo "<span class =' btn-sm btn-danger'>active</span>";
+          }
+          else{
+            echo "<span class =' btn-sm btn-success'>unactive</span>";
+          }
+        ?>
+      </td>
       <td><a href=""><i class="fas fa-edit" style="color:brown"></i></a></td>
-      <td><a href=""><i class="fa-solid fa-trash" style="color:red"></a></i></td>
+      <td><a href="dashbord.php?m=menu&p=delete&id=<?php echo $list['id'] ?>"><i class="fa-solid fa-trash" style="color:red"></a></i></td>
     </tr>
     <?php
         endforeach;

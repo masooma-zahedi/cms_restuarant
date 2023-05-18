@@ -41,8 +41,8 @@ if(!isset($_SESSION['username'])){
                             TopMenu
                         </a>
                         <div class="dropdown-menu p-0  text-light" style="background-color:black" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item badge badge-primary" style="background-color:black" href="dashbord.php?m=menu&p=listmenu">List Menu</a>
-                            <a class="dropdown-item badge badge-primary" style="background-color:black" href="dashbord.php?m=menu&p=add_menu">Add Menu</a>
+                            <a class="dropdown-item badge badge-primary" style="background-color:black" href="dashbord.php?m=menu&p=list">List Menu</a>
+                            <a class="dropdown-item badge badge-primary" style="background-color:black" href="dashbord.php?m=menu&p=add">Add Menu</a>
                         </div>
                     </li>
 
@@ -51,12 +51,6 @@ if(!isset($_SESSION['username'])){
             <div class="col-9 border border-primary">
                 <section class="wrapper ">
                     <?php
-                        // if(isset($_GET['m']) && isset($_GET['p'])){
-                        //     $m = $_GET["m"];
-                        //     $p = $_GET["p"];
-                        //     include_once "$m/$p.php";
-
-                        // }
                         @$m = $_GET["m"]?$_GET['m']:'index' ;
                         @$p = $_GET["p"]?$_GET['p']:'index ';
                         include_once "$m/$p.php";

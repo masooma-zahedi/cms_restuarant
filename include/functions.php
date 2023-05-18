@@ -47,5 +47,11 @@ function selectparent($chid){
     return $res['title'];
 }
 
+function delete_menu($id){
+    $connect = config();
+    $sql = "DELETE FROM menu_tbl WHERE id = '$id'";
+    mysqli_query($connect,$sql);
+}
+
 
 include_once "login.php";
