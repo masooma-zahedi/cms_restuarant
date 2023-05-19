@@ -69,6 +69,29 @@ function edit_menu($data,$id){
     mysqli_query($connect, $sql);
 }
 
+function list_menu_default()
+{
+    $connect = config();
+    $sql = "SELECT * FROM menu_tbl WHERE status='1' AND chid='0' ORDER BY sort ASC ";
+    $row = mysqli_query($connect, $sql);
+    while ($res = mysqli_fetch_assoc($row)) {
+        $result[] = $res;
+    }
+    return $result;
+}
+function list_submenu_default($id)
+{
+    $connect = config();
+    $sql = "SELECT * FROM menu_tbl WHERE status='1' AND chid='$id' ";
+    $row = mysqli_query($connect, $sql);
+    if(mysqli_num_rows($row)> 0){
+        while ($res = mysqli_fetch_assoc($row)) {
+            $result[] = $res;
+        }
+        return $result;
+    }
+}
+
 
 
 
