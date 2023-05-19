@@ -67,7 +67,7 @@ include_once "include/functions.php"
                         foreach ($row as $val) :
                         ?>
                             <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><?php echo $val['title'] ?></a>
+                                <a href="#" class="nav-link <?php $rows = list_submenu_default($val['id']); if($rows){ echo "dropdown-toggle";} ?> " data-bs-toggle="dropdown"><?php echo $val['title'] ?></a>
                                 <?php
                                 $rows = list_submenu_default($val['id']);
                                 if ($rows) :
