@@ -37,10 +37,10 @@
       <td><?php echo $list['sort'] ?></td>
       <td><?php 
           if($list['status'] == "1"){
-            echo "<span class =' btn-sm btn-danger'>active</span>";
+            echo "<span class =' btn-sm btn-success'>active</span>";
           }
           else{
-            echo "<span class =' btn-sm btn-success'>unactive</span>";
+            echo "<span class =' btn-sm btn-danger'>unactive</span>";
           }
         ?>
       </td>

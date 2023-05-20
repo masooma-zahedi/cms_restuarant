@@ -1,51 +1,39 @@
 <div class="listmenu">
     <div class="card mb-5 ">
         <h2 class="card-body text-center text-warning">
-            List Menu
+            List MenuFood_cat
         </h2>
     </div>
     <table class="table table-striped">
   <thead>
     <tr>
       <th scope="col">Menu Name</th>
-      <th scope="col">Url</th>
-      <th scope="col">Major title</th>
-      <th scope="col">Sort</th>
       <th scope="col">Status</th>
+      <th scope="col">Sort</th>
       <th scope="col">Edit</th>
       <th scope="col">Delete</th>
     </tr>
   </thead>
   <tbody>
     <?php 
-    $listmenu = list_menu_admin();
-    foreach($listmenu as $list):
+    $listmenu_cat = list_menufood_cat();
+    foreach($listmenu_cat as $list):
     ?>
     <tr>
-      <th scope="row"><?php echo $list['title'] ?></th>
-      <td><?php echo $list['url'] ?></td>
+      <th scope="row"><?php echo $list['title_cat'] ?></th>
+
       <td><?php 
-            if($list['chid']=="0" ){
-                echo "Negetiv";
-            }
-            else{
-                $parent = selectparent($list['chid']);
-                echo $parent;
-            }
+          if($list['status'] == "1"){
+            echo "<span class =' btn-sm btn-success'>active</span>";
+          }
+          else{
+            echo "<span class =' btn-sm btn-danger'>unactive</span>";
+          }
         ?>
       </td>
       <td><?php echo $list['sort'] ?></td>
-      <td><?php 
-          if($list['status'] == "1"){
-            echo "<span class =' btn-sm btn-danger'>active</span>";
-          }
-          else{
-            echo "<span class =' btn-sm btn-success'>unactive</span>";
-          }
-        ?>
-      </td>
-      <td><a href="dashbord.php?m=menu_site&p=edit&id=<?php echo $list['id'] ?>""><i class="fas fa-edit" style="color:brown"></i></a></td>
-      <td><a href="dashbord.php?m=menu_site&p=delete&id=<?php echo $list['id'] ?>"><i class="fa-solid fa-trash" style="color:red"></a></i></td>
+      <td><a href="dashbord.php?m=menu_food&p=edit&id=<?php echo $list['id'] ?>"><i class="fas fa-edit" style="color:brown"></i></a></td>
+      <td><a href="dashbord.php?m=menu_food&p=delete&id=<?php echo $list['id'] ?>"><i class="fa-solid fa-trash" style="color:red"></a></i></td>
     </tr>
     <?php
         endforeach;

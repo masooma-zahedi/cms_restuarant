@@ -1,7 +1,7 @@
 <?php
 if(isset($_POST['btn'])){
     $data = $_POST['frm'];
-    add_menu_food($data);
+    add_menufood_cat($data);
 }
 ?>
 
