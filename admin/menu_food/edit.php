@@ -7,7 +7,7 @@ $edit = showedit_menu($id);
 if(isset($_POST['btn'])){
     $data = $_POST['frm'];
     edit_menu($data,$id);
-    header("location:dashbord.php?m=menu&p=list");
+    header("location:dashbord.php?m=menu_site&p=list");
 }
 ?>
 <div class="addmenu">

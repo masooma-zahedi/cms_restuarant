@@ -8,7 +8,7 @@ function user_login($data){
     if(isset($res['username'])){
         if($res['password'] == $data['password']){
             $_SESSION['username'] = $res['name'];
-            header("location:../admin/dashbord.php?m=menu&p=list");
+            header("location:../admin/dashbord.php?m=index&p=index");
         }
         else{
             header("location:../admin/index.php?login=error");

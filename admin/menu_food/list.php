@@ -44,8 +44,8 @@
           }
         ?>
       </td>
-      <td><a href="dashbord.php?m=menu&p=edit&id=<?php echo $list['id'] ?>""><i class="fas fa-edit" style="color:brown"></i></a></td>
-      <td><a href="dashbord.php?m=menu&p=delete&id=<?php echo $list['id'] ?>"><i class="fa-solid fa-trash" style="color:red"></a></i></td>
+      <td><a href="dashbord.php?m=menu_site&p=edit&id=<?php echo $list['id'] ?>""><i class="fas fa-edit" style="color:brown"></i></a></td>
+      <td><a href="dashbord.php?m=menu_site&p=delete&id=<?php echo $list['id'] ?>"><i class="fa-solid fa-trash" style="color:red"></a></i></td>
     </tr>
     <?php
         endforeach;

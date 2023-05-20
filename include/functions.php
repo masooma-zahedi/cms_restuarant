@@ -9,7 +9,7 @@ function config()
     $connect = mysqli_connect($server, $user, $password, $db);
     return $connect;
 }
-
+// start menu_site/////////////////////////
 function add_menu($data)
 {
     $connect = config();
@@ -91,6 +91,19 @@ function list_submenu_default($id)
         return $result;
     }
 }
+// end menu_site/////////////////////
+
+// start menu_food///////////////
+function add_menu_food($data)
+{
+    $connect = config();
+    $sql = "INSERT INTO menufood_cat_tbl (title_cat,status,sort) VALUES ('$data[name]','$data[status]',' $data[sort]')";
+    mysqli_query($connect, $sql);
+}
+
+
+
+// end menu_food///////////////////
 
 
 
