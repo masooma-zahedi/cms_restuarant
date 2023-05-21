@@ -5,7 +5,6 @@ include_once "../include/functions.php";
     user_login($data);
   }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 

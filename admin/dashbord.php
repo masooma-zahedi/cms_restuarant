@@ -4,7 +4,6 @@ if(!isset($_SESSION['username'])){
     header("location:index.php?login=first");
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
