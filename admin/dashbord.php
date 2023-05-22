@@ -26,7 +26,7 @@ if(!isset($_SESSION['username'])){
     <div class="container  dashbord">
         <div class="card my-3 ">
             <h5 class="card-body text-center text-info">
-                Hi <?php echo $_SESSION['username'] ?>
+                Hi<?php echo $_SESSION['username'] ?>
             </h5>
         </div>
         <div class="row">

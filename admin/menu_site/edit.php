@@ -1,8 +1,6 @@
 <?php
 $id = $_GET['id'];
 $edit = showedit_menu($id);
-// var_dump($edit);
-
 // update
 if(isset($_POST['btn'])){
     $data = $_POST['frm'];
@@ -10,6 +8,7 @@ if(isset($_POST['btn'])){
     header("location:dashbord.php?m=menu_site&p=list");
 }
 ?>
+
 <div class="addmenu">
     <div class="card mb-5 ">
         <h2 class="card-body text-center text-warning">
