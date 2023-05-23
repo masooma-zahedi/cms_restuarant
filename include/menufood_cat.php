@@ -65,13 +65,7 @@ function putIcon($title_cat){
     }
 }
 
-function putmenufood(){
-    $connect = config();
-    $sql = "SELECT * FROM menufood_tbl";
-    $row = mysqli_query($connect,$sql);
-    while($res = mysqli_fetch_assoc($row)){
-        $result[] = $res;
-    }
-    return $result;
-}
+
+// this is for menu food
+
 

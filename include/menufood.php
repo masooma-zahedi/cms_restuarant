@@ -6,6 +6,48 @@ function add_menufood($data)
     mysqli_query($connect, $sql);
 }
 
+function list_menufood()
+{
+    $connect = config();
+    $sql = "SELECT * FROM menufood_tbl";
+    $row = mysqli_query($connect, $sql);
+    while ($res = mysqli_fetch_assoc($row)) {
+        $result[] = $res;
+    }
+    return $result;
+}
+
+function delete_menufood($id){
+    $connect = config();
+    $sql = "DELETE FROM menufood_tbl WHERE id = '$id'";
+    mysqli_query($connect,$sql);
+}
+
+function showedit_menufood($id){
+    $connect = config();
+    $sql = "SELECT * FROM menufood_tbl WHERE id = '$id'";
+    $row = mysqli_query($connect,$sql);
+    $res = mysqli_fetch_assoc($row);
+    return $res;
+}
+
+
+
+
+
+
+// for web page
+function putmenufood(){
+    $connect = config();
+    $sql = "SELECT * FROM menufood_tbl";
+    $row = mysqli_query($connect,$sql);
+    while($res = mysqli_fetch_assoc($row)){
+        $result[] = $res;
+    }
+    return $result;
+}
+
+
 
 
 
@@ -24,16 +66,6 @@ function add_menufood($data)
 //     return $result;
 // }
 
-// function list_menu_admin()
-// {
-//     $connect = config();
-//     $sql = "SELECT * FROM menu_tbl";
-//     $row = mysqli_query($connect, $sql);
-//     while ($res = mysqli_fetch_assoc($row)) {
-//         $result[] = $res;
-//     }
-//     return $result;
-// }
 
 // function selectparent($chid){
 //     $connect = config();
@@ -43,19 +75,7 @@ function add_menufood($data)
 //     return $res['title'];
 // }
 
-// function delete_menu($id){
-//     $connect = config();
-//     $sql = "DELETE FROM menu_tbl WHERE id = '$id'";
-//     mysqli_query($connect,$sql);
-// }
 
-// function showedit_menu($id){
-//     $connect = config();
-//     $sql = "SELECT * FROM menu_tbl WHERE id = '$id'";
-//     $row = mysqli_query($connect,$sql);
-//     $res = mysqli_fetch_assoc($row);
-//     return $res;
-// }
 // // ///////////////
 // function edit_menu($data,$id){
 //     // var_dump($data);

@@ -1,7 +1,6 @@
 <?php
 $id = $_GET['id'];
-$edit = showedit_menu($id);
-// var_dump($edit);
+$edit = showedit_menufood($id);
 
 // update
 if(isset($_POST['btn'])){
@@ -22,40 +21,20 @@ if(isset($_POST['btn'])){
             <input type="text" name="frm[title]" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?php echo $edit['title'] ?>">
         </div>
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">menu link</label>
-            <input type="text" name="frm[url]" class="form-control" id="exampleInputPassword1" value="<?php echo $edit['url'] ?>">
-        </div>
-        <label for="select ">Menu Location</label>
-        <!-- <div class="border border-danger"> -->
-            <select class="form-control border p-1 mb-3" name="frm[parent]" aria-label="Default select example">
-                <option value="0">Menu Level One</option>
-                <?php
-                    $submenu = submenu();
-                    foreach($submenu as $subs){
-                        echo "<option value='$subs[id]'";
-                        if($edit['chid'] == $subs['id']){
-                            echo " selected";
-                        }
-                        echo ">$subs[title]</option>";
-                    }
-                ?>
-
-                <!-- <option value="1">Menu Level Two</option>
-                <option value="2">Menu Level Three</option> -->
-            </select>
-        <!-- </div> -->
-        <label class="form-check-label" for="exampleCheck1">status Menu</label>
-        <div class="mb-1 form-check">
-            <input type="radio" name="frm[status]" class="form-check-input" id="exampleCheck1" value="1" <?php if($edit['status'] == "1"){echo "checked";} ?>>
-            <label class="form-check-label" for="exampleCheck1">active</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="radio" name="frm[status]" class="form-check-input" id="exampleCheck1" value="0" <?php if($edit['status'] == '0'){echo "checked";} ?>>
-            <label class="form-check-label" for="exampleCheck1">unactive</label>
+            <label for="exampleInputPassword1" class="form-label">description</label>
+            <input type="text" name="frm[description]" class="form-control" id="exampleInputPassword1" value="<?php echo $edit['description'] ?>">
         </div>
         <div class="mb-3 ">
-            <label for="exampleInputEmail1" class="form-label">View Menu</label>
-            <input type="text" name="frm[sort]" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?php echo $edit['sort'] ?>">
+            <label for="exampleInputEmail1" class="form-label">Price</label>
+            <input type="number" name="frm[price]" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?php echo $edit['price'] ?>">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">title_cat</label>
+            <input type="text" name="frm[titile_cat]" class="form-control" id="exampleInputPassword1" value="<?php echo $edit['title_cat'] ?>">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">image</label>
+            <input type="text" name="frm[img]" class="form-control" id="exampleInputPassword1" value="<?php echo $edit['img'] ?>">
         </div>
         <button type="submit" name="btn" class="btn btn-primary">Edit Menu</button>
     </form>
