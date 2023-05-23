@@ -36,3 +36,42 @@ function edit_menufood_cat($data,$id){
     $sql = "UPDATE menufood_cat_tbl SET title_cat='$data[title]', status='$data[status]', sort='$data[sort]' WHERE id ='$id' ";
     mysqli_query($connect, $sql);
 }
+
+function getmenufood_cat(){
+    $connect = config();
+    $sql = "SELECT * FROM menufood_cat_tbl";
+    $row = mysqli_query($connect,$sql);
+    while($res = mysqli_fetch_assoc($row)){
+        $result[] = $res;
+    }
+    return $result;
+}
+
+function putIcon($title_cat){
+    $title_cat = $title_cat;
+    // echo $title_cat."ko";
+    switch($title_cat){
+        case 'lunch':
+            echo "fa fa-hamburger ";
+            break;
+        case 'breakfast':
+            echo "fa fa-coffee ";
+            break;
+        case "dinner":
+            echo "fa fa-utensils ";
+            break;
+        default :
+            echo "fas fa-cheese ";
+    }
+}
+
+function putmenufood(){
+    $connect = config();
+    $sql = "SELECT * FROM menufood_tbl";
+    $row = mysqli_query($connect,$sql);
+    while($res = mysqli_fetch_assoc($row)){
+        $result[] = $res;
+    }
+    return $result;
+}
+
