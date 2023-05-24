@@ -256,7 +256,7 @@ include_once "include/functions.php"
                                 <!-- in foreach  -->
                                 <?php
                                     $menufood = putmenufood();
-                                    foreach($menufood as $food):
+                                   foreach($menufood as $food):
                                 ?>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">

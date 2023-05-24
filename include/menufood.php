@@ -1,6 +1,7 @@
 <?php
 function add_menufood($data)
-{
+{   
+
     $connect = config();
     $sql = "INSERT INTO menufood_tbl (title,description,price,title_cat) VALUES ('$data[title]','$data[description]','$data[price]','$data[title_cat]')";
     mysqli_query($connect, $sql);
@@ -36,7 +37,7 @@ function edit_menufood($data,$id){
     $sql = "UPDATE menufood_tbl SET title='$data[title]', description='$data[description]', price='$data[price]', title_cat='$data[title_cat]', img='$data[img]' WHERE id ='$id' ";
     mysqli_query($connect, $sql);
 }
-
+ 
 
 
 
