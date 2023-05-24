@@ -5,8 +5,8 @@ $edit = showedit_menufood($id);
 // update
 if(isset($_POST['btn'])){
     $data = $_POST['frm'];
-    edit_menu($data,$id);
-    header("location:dashbord.php?m=menu_site&p=list");
+    edit_menufood($data,$id);
+    header("location:dashbord.php?m=menu_food&p=list");
 }
 ?>
 <div class="addmenu">
@@ -30,7 +30,7 @@ if(isset($_POST['btn'])){
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">title_cat</label>
-            <input type="text" name="frm[titile_cat]" class="form-control" id="exampleInputPassword1" value="<?php echo $edit['title_cat'] ?>">
+            <input type="text" name="frm[title_cat]" class="form-control" id="exampleInputPassword1" value="<?php echo $edit['title_cat'] ?>">
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">image</label>

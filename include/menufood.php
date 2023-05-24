@@ -31,6 +31,13 @@ function showedit_menufood($id){
     return $res;
 }
 
+function edit_menufood($data,$id){
+    $connect = config();
+    $sql = "UPDATE menufood_tbl SET title='$data[title]', description='$data[description]', price='$data[price]', title_cat='$data[title_cat]', img='$data[img]' WHERE id ='$id' ";
+    mysqli_query($connect, $sql);
+}
+
+
 
 
 
@@ -77,13 +84,6 @@ function putmenufood(){
 
 
 // // ///////////////
-// function edit_menu($data,$id){
-//     // var_dump($data);
-//     // var_dump($id);die;
-//     $connect = config();
-//     $sql = "UPDATE menu_tbl SET title='$data[title]', url='$data[url]', status='$data[status]', sort='$data[sort]', chid='$data[parent]' WHERE id ='$id' ";
-//     mysqli_query($connect, $sql);
-// }
 
 // function list_menu_default()
 // {
