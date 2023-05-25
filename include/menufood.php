@@ -32,9 +32,9 @@ function showedit_menufood($id){
     return $res;
 }
 
-function edit_menufood($data,$id){
+function edit_menufood($data,$id,$img){
     $connect = config();
-    $sql = "UPDATE menufood_tbl SET title='$data[title]', description='$data[description]', price='$data[price]', title_cat='$data[title_cat]', img='$data[img]' WHERE id ='$id' ";
+    $sql = "UPDATE menufood_tbl SET title='$data[title]', description='$data[description]', price='$data[price]', title_cat='$data[parent]', img='$img' WHERE id ='$id' ";
     mysqli_query($connect, $sql);
 }
  
