@@ -1,9 +1,9 @@
 <?php
-function add_menufood($data)
+function add_menufood($data,$img)
 {   
 
     $connect = config();
-    $sql = "INSERT INTO menufood_tbl (title,description,price,title_cat) VALUES ('$data[title]','$data[description]','$data[price]','$data[title_cat]')";
+    $sql = "INSERT INTO menufood_tbl (title,description,price,title_cat,img) VALUES ('$data[title]','$data[description]','$data[price]','$data[title_cat]','$img')";
     mysqli_query($connect, $sql);
 }
 

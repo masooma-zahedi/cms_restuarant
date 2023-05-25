@@ -65,7 +65,10 @@ include_once "include/functions.php"
                         foreach ($row as $val) :
                         ?>
                             <div class="nav-item dropdown">
-                                <a href="#" class="nav-link <?php $rows = list_submenu_default($val['id']); if($rows){ echo "dropdown-toggle";} ?> " data-bs-toggle="dropdown"><?php echo $val['title'] ?></a>
+                                <a href="#" class="nav-link <?php $rows = list_submenu_default($val['id']);
+                                                            if ($rows) {
+                                                                echo "dropdown-toggle";
+                                                            } ?> " data-bs-toggle="dropdown"><?php echo $val['title'] ?></a>
                                 <?php
                                 $rows = list_submenu_default($val['id']);
                                 if ($rows) :
@@ -217,19 +220,19 @@ include_once "include/functions.php"
                     </div>
                     <ul class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
                         <?php
-                            $food_cat=getmenufood_cat();
-                            foreach($food_cat as $meal):
+                        $food_cat = getmenufood_cat();
+                        foreach ($food_cat as $meal) :
                         ?>
-                        <li class="nav-item">
-                            <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 active" data-bs-toggle="pill" href="#tab-1">
-                                <!-- <i class="fa fa-utensils fa-2x text-primary"></i> -->
-                                <i class="<?php putIcon($meal['title_cat']).'fa-3x text-primary' ?>"></i>
-                                <div class="ps-3">
-                                    <small class="text-body">Popular</small>
-                                    <h6 class="mt-n1 mb-0"><?php echo $meal['title_cat'] ?></h6>
-                                </div>
-                            </a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 active" data-bs-toggle="pill" href="#tab-1">
+                                    <!-- <i class="fa fa-utensils fa-2x text-primary"></i> -->
+                                    <i class="<?php putIcon($meal['title_cat']) . 'fa-3x text-primary' ?>"></i>
+                                    <div class="ps-3">
+                                        <small class="text-body">Popular</small>
+                                        <h6 class="mt-n1 mb-0"><?php echo $meal['title_cat'] ?></h6>
+                                    </div>
+                                </a>
+                            </li>
                         <?php endforeach ?>
                         <!-- <li class="nav-item">
                             <a class="d-flex align-items-center text-start mx-3 pb-3" data-bs-toggle="pill" href="#tab-2">
@@ -255,21 +258,23 @@ include_once "include/functions.php"
                             <div class="row g-4">
                                 <!-- in foreach  -->
                                 <?php
-                                    $menufood = putmenufood();
-                                   foreach($menufood as $food):
+                                $menufood = putmenufood();
+                                foreach ($menufood as $food) :
                                 ?>
-                                <div class="col-lg-6">
-                                    <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-1.jpg" alt="" style="width: 80px;">
-                                        <div class="w-100 d-flex flex-column text-start ps-4">
-                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span><?php echo $food['title'] ?></span>
-                                                <span class="text-primary"><?php echo "$".$food['price'] ?></span>
-                                            </h5>
-                                            <small class="fst-italic"><?php echo $food['description'] ?></small>
+                                    <div class="col-lg-6">
+                                        <div class="d-flex align-items-center">
+                                            <div class="" style="width:80px">
+                                                <img class="flex-shrink-0 img-fluid rounded" src="<?php echo "./admin/". $food['img'] ?>" alt="" style="width:100%">
+                                            </div>
+                                            <div class="w-100 d-flex flex-column text-start ps-4">
+                                                <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                    <span><?php echo $food['title'] ?></span>
+                                                    <span class="text-primary"><?php echo "$" . $food['price'] ?></span>
+                                                </h5>
+                                                <small class="fst-italic"><?php echo $food['description'] ?></small>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
                                 <?php endforeach; ?>
                                 <!-- <div class="col-lg-6">
                                     <div class="d-flex align-items-center">

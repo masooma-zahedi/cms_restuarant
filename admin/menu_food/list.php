@@ -26,7 +26,7 @@
       <td><?php echo $list['description'] ?></td>
       <td><?php echo "$".$list['price'] ?></td>
       <td><?php echo $list['title_cat'] ?></td>
-      <td>img</td>
+      <td><?php echo $list['img'] ?></td>
       <td><a href="dashbord.php?m=menu_food&p=edit&id=<?php echo $list['id'] ?>""><i class="fas fa-edit" style="color:brown"></i></a></td>
       <td><a href="dashbord.php?m=menu_food&p=delete&id=<?php echo $list['id'] ?>"><i class="fa-solid fa-trash" style="color:red"></a></i></td>
     </tr>
