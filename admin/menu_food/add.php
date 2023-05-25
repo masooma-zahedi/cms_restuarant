@@ -27,9 +27,28 @@ if(isset($_POST['btn'])){
             <label for="exampleInputEmail1" class="form-label">Price Food</label>
             <input type="number" name="frm[price]" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
-        <div class="mb-3 ">
+        <!-- <div class="mb-3 ">
             <label for="exampleInputEmail1" class="form-label">title Food Category </label>
             <input type="text" name="frm[title_cat]" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div> -->
+        <div class="mb-3">
+        <label for="select ">Food category</label>
+        <!-- <div class="border border-danger"> -->
+            <select class="form-control border p-1 mb-3" name="frm[parent]" aria-label="Default select example">
+                <!-- <option value="0">Menu Level One</option> -->
+                <?php
+                    $submenufood = submenufood();
+                    var_dump($submenufood);
+                    foreach($submenufood as $subs){
+                        echo "<option value='$subs[id]'>$subs[title_cat]</option>";
+                    }
+                ?>
+
+                <!-- <option value="1">Menu Level Two</option>
+                <option value="2">Menu Level Three</option> -->
+            </select>
+        <!-- </div> -->
+
         </div>
         <div class="mb-3 ">
             <label for="exampleInputEmail1" class="form-label">image </label>

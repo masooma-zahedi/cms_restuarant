@@ -3,7 +3,7 @@ function add_menufood($data,$img)
 {   
 
     $connect = config();
-    $sql = "INSERT INTO menufood_tbl (title,description,price,title_cat,img) VALUES ('$data[title]','$data[description]','$data[price]','$data[title_cat]','$img')";
+    $sql = "INSERT INTO menufood_tbl (title,description,price,title_cat,img) VALUES ('$data[title]','$data[description]','$data[price]','$data[parent]','$img')";
     mysqli_query($connect, $sql);
 }
 
@@ -38,6 +38,26 @@ function edit_menufood($data,$id){
     mysqli_query($connect, $sql);
 }
  
+// working on category
+function submenufood()
+{
+    $connect = config();
+    $sql = "SELECT * FROM menufood_cat_tbl ";
+    $row = mysqli_query($connect, $sql);
+    while ($res = mysqli_fetch_assoc($row)) {
+        $result[] = $res;
+    }
+    return $result;
+}
+
+function selectparentfood($chid){
+    $connect = config();
+    $sql = "SELECT * FROM menufood_cat_tbl WHERE id ='$chid'";
+    $row = mysqli_query($connect, $sql);
+    $res = mysqli_fetch_assoc($row);
+    return $res['title_cat'];
+}
+
 
 
 
@@ -63,25 +83,8 @@ function putmenufood(){
 
 
 
-// function submenu()
-// {
-//     $connect = config();
-//     $sql = "SELECT * FROM menu_tbl WHERE chid = '0'";
-//     $row = mysqli_query($connect, $sql);
-//     while ($res = mysqli_fetch_assoc($row)) {
-//         $result[] = $res;
-//     }
-//     return $result;
-// }
 
 
-// function selectparent($chid){
-//     $connect = config();
-//     $sql = "SELECT * FROM menu_tbl WHERE id ='$chid'";
-//     $row = mysqli_query($connect, $sql);
-//     $res = mysqli_fetch_assoc($row);
-//     return $res['title'];
-// }
 
 
 // // ///////////////
