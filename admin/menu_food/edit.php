@@ -1,15 +1,13 @@
 <?php
 $id = $_GET['id'];
 $edit = showedit_menufood($id);
-// var_dump($edit);
-// echo $edit['title_cat'];
-// echo "<br>".selectparentfood($edit['title_cat']);
 
 // update
 if(isset($_POST['btn'])){
     $data = $_POST['frm'];
     // var_dump($data["parent"]);
-    $img = uploader('img','images/menufood/',$edit['title_cat'],'namefood');
+    $titlecat = selectparentfood($data['parent']);
+    $img = uploader('img','images/menufood/',$titlecat,'namefood');
     edit_menufood($data,$id,$img);
     header("location:dashbord.php?m=menu_food&p=list");
 }

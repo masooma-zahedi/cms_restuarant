@@ -1,7 +1,8 @@
 <?php
 if(isset($_POST['btn'])){
     $data = $_POST['frm'];
-    $img = uploader('img','images/menufood/',$data['title_cat'],'namefood');
+    $titlecat = selectparentfood($data['parent']);
+    $img = uploader('img','images/menufood/',$titlecat,'namefood');
     add_menufood($data,$img);
 }
 ?>
@@ -38,7 +39,7 @@ if(isset($_POST['btn'])){
                 <!-- <option value="0">Menu Level One</option> -->
                 <?php
                     $submenufood = submenufood();
-                    var_dump($submenufood);
+                    // var_dump($submenufood);
                     foreach($submenufood as $subs){
                         echo "<option value='$subs[id]'>$subs[title_cat]</option>";
                     }
