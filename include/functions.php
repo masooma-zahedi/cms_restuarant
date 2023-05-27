@@ -26,6 +26,11 @@ function uploader($file,$dir,$folder,$name){
 
 }
 
+
+
+
+
+
 @$m = $_GET['m'] ? $_GET['m'] : 'index';
 switch ($m) {
     case 'index':
