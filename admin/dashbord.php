@@ -74,7 +74,7 @@ if(!isset($_SESSION['username'])){
 
                 </ul>
             </div>
-            <div class="col-9 border border-primary">
+            <div class="col-9 ">
                 <section class="wrapper ">
                     <?php
                         @$m = $_GET["m"]?$_GET['m']:'index' ;

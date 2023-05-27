@@ -4,8 +4,8 @@
             List Book Table
         </h2>
     </div>
-    <table class="table table-striped">
-  <thead>
+    <table class="table table-striped ">
+  <thead class="">
     <tr>
       <th scope="col">Name</th>
       <th scope="col">email</th>
@@ -14,7 +14,7 @@
       <th scope="col">massage</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody class="">
     <?php 
     $listmenu_cat = list_booktable();
     foreach($listmenu_cat as $list):
@@ -33,7 +33,7 @@
       </td> -->
       <td><?php echo $list['email'] ?></td>
       <td><?php echo $list['date'] ?></td>
-      <td><?php echo $list['numpeople'] ?></td>
+      <td class="text-center"><?php echo $list['numpeople'] ?></td>
       <td><?php echo $list['massage'] ?></td>
       <!-- <td><a href="dashbord.php?m=menu_food_cat&p=edit&id=<?php echo $list['id'] ?>"><i class="fas fa-edit" style="color:brown"></i></a></td> -->
       <td><a href="dashbord.php?m=booktable&p=delete&id=<?php echo $list['id'] ?>"><i class="fa-solid fa-trash" style="color:red"></a></i></td>

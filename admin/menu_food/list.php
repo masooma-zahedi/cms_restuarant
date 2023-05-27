@@ -4,8 +4,8 @@
             List Menu
         </h2>
     </div>
-    <table class="table table-striped">
-  <thead>
+    <table class="table table-striped ">
+  <thead class="">
     <tr>
       <th scope="col">Menu Name</th>
       <th scope="col">Description</th>
