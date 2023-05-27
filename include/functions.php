@@ -47,6 +47,9 @@ switch ($m) {
     case  'menu_food':
         include_once "menufood.php";
         break;
+    case  'booktable':
+        include_once "booktable.php";
+        break;
 
 }
 
