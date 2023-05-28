@@ -71,6 +71,15 @@ if(!isset($_SESSION['username'])){
                             <a class="dropdown-item badge badge-primary" style="background-color:black" href="dashbord.php?m=menu_food&p=add">Add MenuFood</a>
                         </div> -->
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            hero_header
+                        </a>
+                        <div class="dropdown-menu p-0  text-light" style="background-color:black" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item badge badge-primary" style="background-color:black" href="dashbord.php?m=hero_header&p=list">List hero header</a>
+                            <a class="dropdown-item badge badge-primary" style="background-color:black" href="dashbord.php?m=hero_header&p=add">Add hero header</a>
+                        </div>
+                    </li>
 
                 </ul>
             </div>

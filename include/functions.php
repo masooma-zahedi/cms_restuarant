@@ -37,6 +37,8 @@ switch ($m) {
         include_once 'menu_site.php';
         include_once "menufood_cat.php";
         include_once "menufood.php";
+        include_once "booktable.php";
+        include_once "hero_header.php";
         break;
     case 'menu_site':
         include_once "menu_site.php";
@@ -49,6 +51,9 @@ switch ($m) {
         break;
     case  'booktable':
         include_once "booktable.php";
+        break;
+    case  'hero_header':
+        include_once "hero_header.php";
         break;
 
 }
