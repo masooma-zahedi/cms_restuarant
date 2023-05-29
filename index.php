@@ -646,18 +646,25 @@ include_once "include/functions.php"
                     <h1 class="mb-5">Our Clients Say!!!</h1>
                 </div>
                 <div class="owl-carousel testimonial-carousel">
+                    <?php 
+                        $clientsay = showclientsay();
+                        foreach($clientsay as $client):
+                    ?>
                     <div class="testimonial-item bg-transparent border rounded p-4">
                         <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                        <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
+                        <p><?php echo $client['description'] ?></p>
                         <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg" style="width: 50px; height: 50px;">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="<?php echo "./admin/".$client['img'] ?>" style="width: 50px; height: 50px;">
                             <div class="ps-3">
-                                <h5 class="mb-1">Client Name</h5>
+                                <h5 class="mb-1"><?php echo $client['name'] ?></h5>
                                 <small>Profession</small>
                             </div>
                         </div>
                     </div>
-                    <div class="testimonial-item bg-transparent border rounded p-4">
+                    <?php 
+                        endforeach;
+                    ?>
+                    <!-- <div class="testimonial-item bg-transparent border rounded p-4">
                         <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
                         <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
                         <div class="d-flex align-items-center">
@@ -689,7 +696,7 @@ include_once "include/functions.php"
                                 <small>Profession</small>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
