@@ -92,8 +92,8 @@ include_once "include/functions.php"
 
             <div class="container-xxl py-5 bg-dark hero-header mb-5">
                 <div class="container my-5 py-5">
-                    <?php 
-                        $heroheader =update_heroheader();
+                    <?php
+                    $heroheader = update_heroheader();
                     ?>
                     <div class="row align-items-center g-5">
                         <div class="col-lg-6 text-center text-lg-start">
@@ -102,7 +102,7 @@ include_once "include/functions.php"
                             <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Book A Table</a>
                         </div>
                         <div class="col-lg-6 text-center text-lg-end overflow-hidden">
-                            <img class="img-fluid" style="width:100%;border-radius:50%" src="<?php echo './admin/'.$heroheader['hero_img'] ?>" alt="">
+                            <img class="img-fluid" style="width:100%;border-radius:50%" src="<?php echo './admin/' . $heroheader['hero_img'] ?>" alt="">
                         </div>
                     </div>
                 </div>
@@ -227,7 +227,7 @@ include_once "include/functions.php"
                         foreach ($food_cat as $meal) :
                         ?>
                             <li class="nav-item">
-                                <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 active" data-bs-toggle="pill" href="#" >
+                                <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 active" data-bs-toggle="pill" href="#">
                                     <!-- <i class="fa fa-utensils fa-2x text-primary"></i> -->
                                     <i class="<?php putIcon($meal['title_cat']) . 'fa-3x text-primary' ?>"></i>
                                     <div class="ps-3">
@@ -267,7 +267,7 @@ include_once "include/functions.php"
                                     <div class="col-lg-6">
                                         <div class="d-flex align-items-center">
                                             <div class="" style="width:80px">
-                                                <img class="flex-shrink-0 img-fluid rounded" src="<?php echo "./admin/". $food['img'] ?>" alt="" style="width:100%">
+                                                <img class="flex-shrink-0 img-fluid rounded" src="<?php echo "./admin/" . $food['img'] ?>" alt="" style="width:100%">
                                             </div>
                                             <div class="w-100 d-flex flex-column text-start ps-4">
                                                 <h5 class="d-flex justify-content-between border-bottom pb-2">
@@ -492,11 +492,12 @@ include_once "include/functions.php"
         <div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
             <div class="row g-0">
                 <div class="col-md-6">
-                    <div class="video">
-                        <button type="button" class="btn-play" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
+                    <!-- <div class="video"> -->
+                        <!-- <button type="button" class="btn-play" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
                             <span></span>
-                        </button>
-                    </div>
+                        </button> -->
+                        <iframe width="100%" height="100%" src="./admin/images/iframemovie/<?php echo iframebookmovie() ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <!-- </div> -->
                 </div>
                 <div class="col-md-6 bg-dark d-flex align-items-center">
                     <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
@@ -549,22 +550,21 @@ include_once "include/functions.php"
             </div>
         </div>
 
-        <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <!-- <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content rounded-0">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Youtube Video <?php echo iframebookmovie() ?></h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <!-- 16:9 aspect ratio -->
                         <div class="ratio ratio-16x9">
-                            <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always" allow="autoplay"></iframe>
+                            <iframe width="500" height="315" src="<?php echo iframebookmovie() ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Reservation Start -->
 
 

@@ -25,7 +25,25 @@ function delete_booktable($id){
         $sql = "DELETE FROM booktable_tbl WHERE id = '$id'";
         mysqli_query($connect,$sql);
     }
-    
+
+// update movie for booktable
+if(isset($_GET['name'])){
+    $databook = $_POST['update'];
+    $connect = config();
+    $sql="INSERT INTO iframebook_tbl (iframebook) VALUES ('$databook')";
+    $sql = "UPDATE iframebook_tbl SET iframebook='$databook' WHERE id ='1'";
+    mysqli_query($connect,$sql);
+    // var_dump($databook) ;
+}
+
+
+function iframebookmovie(){
+    $connect = config();
+    $sql = "SELECT * FROM iframebook_tbl WHERE id='1'";
+    $row = mysqli_query($connect,$sql);
+    $res = mysqli_fetch_assoc($row);
+    return $res['iframebook'];
+}
 
 
 
