@@ -222,66 +222,115 @@ include_once "include/functions.php"
                         <!-- <i class="fa fa-utensils fa-2x text-primary"></i> -->
                     </div>
                     <ul class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
-                        <?php
-                        $food_cat = getmenufood_cat();
-                        foreach ($food_cat as $meal) :
-                        ?>
-                            <li class="nav-item">
-                                <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 active" data-bs-toggle="pill" href="#">
-                                    <!-- <i class="fa fa-utensils fa-2x text-primary"></i> -->
-                                    <i class="<?php putIcon($meal['title_cat']) . 'fa-3x text-primary' ?>"></i>
-                                    <div class="ps-3">
-                                        <small class="text-body">Popular</small>
-                                        <h6 class="mt-n1 mb-0"><?php echo $meal['title_cat'] ?></h6>
-                                    </div>
-                                </a>
-                            </li>
-                        <?php endforeach ?>
-                        <!-- <li class="nav-item">
-                            <a class="d-flex align-items-center text-start mx-3 pb-3" data-bs-toggle="pill" href="#tab-2">
+                        <li class="nav-item">
+                            <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 active" data-bs-toggle="pill" href="#tab_25">
+                                <!-- <i class="fa fa-utensils fa-2x text-primary"></i> -->
+                                <i class="fa fa-coffee 'fa-3x text-primary' ?>"></i>
+                                <div class="ps-3">
+                                    <small class="text-body">Popular</small>
+                                    <h6 class="mt-n1 mb-0">breakfast</h6>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="d-flex align-items-center text-start mx-3 pb-3" data-bs-toggle="pill" href="#tab_26">
                                 <i class="fa fa-hamburger fa-2x text-primary"></i>
                                 <div class="ps-3">
                                     <small class="text-body">Special</small>
                                     <h6 class="mt-n1 mb-0">Launch</h6>
                                 </div>
                             </a>
-                        </li> -->
-                        <!-- <li class="nav-item">
-                            <a class="d-flex align-items-center text-start mx-3 me-0 pb-3" data-bs-toggle="pill" href="#tab-3">
+                        </li>
+                        <li class="nav-item">
+                            <a class="d-flex align-items-center text-start mx-3 me-0 pb-3" data-bs-toggle="pill" href="#tab_27">
                                 <i class="fa fa-utensils fa-2x text-primary"></i>
                                 <div class="ps-3">
                                     <small class="text-body">Lovely</small>
                                     <h6 class="mt-n1 mb-0">Dinner</h6>
                                 </div>
                             </a>
-                        </li> -->
+                        </li>
                     </ul>
                     <div class="tab-content">
-                        <div id="tab-1" class="tab-pane fade show p-0 active">
+                        <div id="tab_25" class="tab-pane fade show p-0 active">
                             <div class="row g-4">
                                 <!-- in foreach  -->
                                 <?php
                                 $menufood = putmenufood();
                                 foreach ($menufood as $food) :
+                                    if ($food["title_cat"] == "25") :
                                 ?>
-                                    <div class="col-lg-6">
-                                        <div class="d-flex align-items-center">
-                                            <div class="" style="width:80px">
-                                                <img class="flex-shrink-0 img-fluid rounded" src="<?php echo "./admin/" . $food['img'] ?>" alt="" style="width:100%">
-                                            </div>
-                                            <div class="w-100 d-flex flex-column text-start ps-4">
-                                                <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                    <span><?php echo $food['title'] ?></span>
-                                                    <span class="text-primary"><?php echo "$" . $food['price'] ?></span>
-                                                </h5>
-                                                <small class="fst-italic"><?php echo $food['description'] ?></small>
+                                        <div class="col-lg-6 mb-2">
+                                            <div class="d-flex align-items-center">
+                                                <div class="" style="width:80px">
+                                                    <img class="flex-shrink-0 img-fluid rounded" src="<?php echo "./admin/" . $food['img'] ?>" alt="" style="width:100%">
+                                                </div>
+                                                <div class="w-100 d-flex flex-column text-start ps-4">
+                                                    <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                        <span><?php echo $food['title'] ?></span>
+                                                        <span class="text-primary"><?php echo "$" . $food['price'] ?></span>
+                                                    </h5>
+                                                    <small class="fst-italic"><?php echo $food['description'] ?></small>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                <?php endforeach; ?>
+                                <?php endif;
+                                endforeach; ?>
                             </div>
                         </div>
-                        <div id="tab-2" class="tab-pane fade show p-0">
+                        <div id="tab_26" class="tab-pane fade show p-0 ">
+                            <div class="row g-4">
+                                <!-- in foreach  -->
+                                <?php
+                                $menufood = putmenufood();
+                                foreach ($menufood as $food) :
+                                    if ($food["title_cat"] == "26") :
+                                ?>
+                                        <div class="col-lg-6 mb-2">
+                                            <div class="d-flex  align-items-center">
+                                                <div class="" style="width:80px">
+                                                    <img class="flex-shrink-0 img-fluid rounded" src="<?php echo "./admin/" . $food['img'] ?>" alt="" style="width:100%">
+                                                </div>
+                                                <div class="w-100 d-flex flex-column text-start ps-4">
+                                                    <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                        <span><?php echo $food['title'] ?></span>
+                                                        <span class="text-primary"><?php echo "$" . $food['price'] ?></span>
+                                                    </h5>
+                                                    <small class="fst-italic"><?php echo $food['description'] ?></small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                <?php endif;
+                                endforeach; ?>
+                            </div>
+                        </div>
+                        <div id="tab_27" class="tab-pane fade show p-0 ">
+                            <div class="row g-4">
+                                <!-- in foreach  -->
+                                <?php
+                                $menufood = putmenufood();
+                                foreach ($menufood as $food) :
+                                    if ($food["title_cat"] == "27") :
+                                ?>
+                                        <div class="col-lg-6 mb-2">
+                                            <div class="d-flex align-items-center">
+                                                <div class="" style="width:80px">
+                                                    <img class="flex-shrink-0 img-fluid rounded" src="<?php echo "./admin/" . $food['img'] ?>" alt="" style="width:100%">
+                                                </div>
+                                                <div class="w-100 d-flex flex-column text-start ps-4">
+                                                    <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                        <span><?php echo $food['title'] ?></span>
+                                                        <span class="text-primary"><?php echo "$" . $food['price'] ?></span>
+                                                    </h5>
+                                                    <small class="fst-italic"><?php echo $food['description'] ?></small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                <?php endif;
+                                endforeach; ?>
+                            </div>
+                        </div>
+                        <!-- <div id="tab_26" class="tab-pane fade show p-0">
                             <div class="row g-4">
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
@@ -381,7 +430,7 @@ include_once "include/functions.php"
                                 </div>
                             </div>
                         </div>
-                        <div id="tab-3" class="tab-pane fade show p-0">
+                        <div id="tab_27" class="tab-pane fade show p-0">
                             <div class="row g-4">
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
@@ -480,7 +529,7 @@ include_once "include/functions.php"
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -493,10 +542,10 @@ include_once "include/functions.php"
             <div class="row g-0">
                 <div class="col-md-6">
                     <!-- <div class="video"> -->
-                        <!-- <button type="button" class="btn-play" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
+                    <!-- <button type="button" class="btn-play" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
                             <span></span>
                         </button> -->
-                        <iframe width="100%" height="100%" src="./admin/images/iframemovie/<?php echo iframebookmovie() ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe width="100%" height="100%" src="./admin/images/iframemovie/<?php echo iframebookmovie() ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     <!-- </div> -->
                 </div>
                 <div class="col-md-6 bg-dark d-flex align-items-center">
@@ -646,23 +695,23 @@ include_once "include/functions.php"
                     <h1 class="mb-5">Our Clients Say!!!</h1>
                 </div>
                 <div class="owl-carousel testimonial-carousel">
-                    <?php 
-                        $clientsay = showclientsay();
-                        foreach($clientsay as $client):
+                    <?php
+                    $clientsay = showclientsay();
+                    foreach ($clientsay as $client) :
                     ?>
-                    <div class="testimonial-item bg-transparent border rounded p-4">
-                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                        <p><?php echo $client['description'] ?></p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="<?php echo "./admin/".$client['img'] ?>" style="width: 50px; height: 50px;">
-                            <div class="ps-3">
-                                <h5 class="mb-1"><?php echo $client['name'] ?></h5>
-                                <small>Profession</small>
+                        <div class="testimonial-item bg-transparent border rounded p-4">
+                            <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+                            <p><?php echo $client['description'] ?></p>
+                            <div class="d-flex align-items-center">
+                                <img class="img-fluid flex-shrink-0 rounded-circle" src="<?php echo "./admin/" . $client['img'] ?>" style="width: 50px; height: 50px;">
+                                <div class="ps-3">
+                                    <h5 class="mb-1"><?php echo $client['name'] ?></h5>
+                                    <small>Profession</small>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <?php 
-                        endforeach;
+                    <?php
+                    endforeach;
                     ?>
                     <!-- <div class="testimonial-item bg-transparent border rounded p-4">
                         <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
