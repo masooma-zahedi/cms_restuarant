@@ -227,7 +227,7 @@ include_once "include/functions.php"
                         foreach ($food_cat as $meal) :
                         ?>
                             <li class="nav-item">
-                                <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 active" data-bs-toggle="pill" href="#">
+                                <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 active" data-bs-toggle="pill" href="#tab_<?php echo $meal['title_cat'] ?>">
                                     <!-- <i class="fa fa-utensils fa-2x text-primary"></i> -->
                                     <i class="<?php putIcon($meal['title_cat']) . 'fa-3x text-primary' ?>"></i>
                                     <div class="ps-3">
@@ -493,10 +493,10 @@ include_once "include/functions.php"
             <div class="row g-0">
                 <div class="col-md-6">
                     <!-- <div class="video"> -->
-                        <!-- <button type="button" class="btn-play" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
+                    <!-- <button type="button" class="btn-play" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
                             <span></span>
                         </button> -->
-                        <iframe width="100%" height="100%" src="./admin/images/iframemovie/<?php echo iframebookmovie() ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe width="100%" height="100%" src="./admin/images/iframemovie/<?php echo iframebookmovie() ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     <!-- </div> -->
                 </div>
                 <div class="col-md-6 bg-dark d-flex align-items-center">
@@ -646,23 +646,23 @@ include_once "include/functions.php"
                     <h1 class="mb-5">Our Clients Say!!!</h1>
                 </div>
                 <div class="owl-carousel testimonial-carousel">
-                    <?php 
-                        $clientsay = showclientsay();
-                        foreach($clientsay as $client):
+                    <?php
+                    $clientsay = showclientsay();
+                    foreach ($clientsay as $client) :
                     ?>
-                    <div class="testimonial-item bg-transparent border rounded p-4">
-                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                        <p><?php echo $client['description'] ?></p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="<?php echo "./admin/".$client['img'] ?>" style="width: 50px; height: 50px;">
-                            <div class="ps-3">
-                                <h5 class="mb-1"><?php echo $client['name'] ?></h5>
-                                <small>Profession</small>
+                        <div class="testimonial-item bg-transparent border rounded p-4">
+                            <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+                            <p><?php echo $client['description'] ?></p>
+                            <div class="d-flex align-items-center">
+                                <img class="img-fluid flex-shrink-0 rounded-circle" src="<?php echo "./admin/" . $client['img'] ?>" style="width: 50px; height: 50px;">
+                                <div class="ps-3">
+                                    <h5 class="mb-1"><?php echo $client['name'] ?></h5>
+                                    <small>Profession</small>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <?php 
-                        endforeach;
+                    <?php
+                    endforeach;
                     ?>
                     <!-- <div class="testimonial-item bg-transparent border rounded p-4">
                         <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
