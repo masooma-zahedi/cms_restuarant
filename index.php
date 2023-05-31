@@ -224,9 +224,9 @@ include_once "include/functions.php"
                     </div>
                     <ul class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
                         <li class="nav-item">
-                            <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 text-decoration-none active" data-bs-toggle="pill" href="#tab_25">
+                            <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 text-decoration-none active" data-bs-toggle="pill" href="#tab_1">
                                 <!-- <i class="fa fa-utensils fa-2x text-primary"></i> -->
-                                <i class="fa fa-coffee 'fa-3x text-primary' ?>"></i>
+                                <i class="fa fa-coffee fa-2x text-primary' ?>"></i>
                                 <div class="ps-3">
                                     <small class="text-body">Popular</small>
                                     <h6 class="mt-n1 mb-0">breakfast</h6>
@@ -234,7 +234,7 @@ include_once "include/functions.php"
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="d-flex align-items-center text-start mx-3 pb-3 text-decoration-none" data-bs-toggle="pill" href="#tab_26">
+                            <a class="d-flex align-items-center text-start mx-3 pb-3 text-decoration-none" data-bs-toggle="pill" href="#tab_2">
                                 <i class="fa fa-hamburger fa-2x text-primary"></i>
                                 <div class="ps-3">
                                     <small class="text-body">Special</small>
@@ -243,7 +243,7 @@ include_once "include/functions.php"
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="d-flex align-items-center text-start mx-3 me-0 pb-3 text-decoration-none" data-bs-toggle="pill" href="#tab_27">
+                            <a class="d-flex align-items-center text-start mx-3 me-0 pb-3 text-decoration-none" data-bs-toggle="pill" href="#tab_3">
                                 <i class="fa fa-utensils fa-2x text-primary"></i>
                                 <div class="ps-3">
                                     <small class="text-body">Lovely</small>
@@ -252,8 +252,8 @@ include_once "include/functions.php"
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="d-flex align-items-center text-start mx-3 me-0 pb-3 text-decoration-none" data-bs-toggle="pill" href="#tab_27">
-                                <i class="fa fa-utensils fa-2x text-primary"></i>
+                            <a class="d-flex align-items-center text-start mx-3 me-0 pb-3 text-decoration-none" data-bs-toggle="pill" href="#tab_4">
+                                <i class="fas fa-bread-slice fa-2x text-primary"></i>
                                 <div class="ps-3">
                                     <small class="text-body">Lovely</small>
                                     <h6 class="mt-n1 mb-0">dessert</h6>
@@ -262,13 +262,13 @@ include_once "include/functions.php"
                         </li>
                     </ul>
                     <div class="tab-content">
-                        <div id="tab_25" class="tab-pane fade show p-0 active">
+                        <div id="tab_1" class="tab-pane fade show p-0 active">
                             <div class="row g-4">
                                 <!-- in foreach  -->
                                 <?php
                                 $menufood = putmenufood();
                                 foreach ($menufood as $food) :
-                                    if ($food["title_cat"] == "25") :
+                                    if ($food["title_cat"] == "1") :
                                 ?>
                                         <div class="col-lg-6 mb-2">
                                             <a type="button" class="text-muted" data-toggle="modal" data-target="#modal_<?php echo $food['id'] ?>">
@@ -312,13 +312,13 @@ include_once "include/functions.php"
                                 endforeach; ?>
                             </div>
                         </div>
-                        <div id="tab_26" class="tab-pane fade show p-0 ">
+                        <div id="tab_2" class="tab-pane fade show p-0 ">
                             <div class="row g-4">
                                 <!-- in foreach  -->
                                 <?php
                                 $menufood = putmenufood();
                                 foreach ($menufood as $food) :
-                                    if ($food["title_cat"] == "26") :
+                                    if ($food["title_cat"] == "2") :
                                 ?>
                                         <div class="col-lg-6 mb-2">
                                             <a type="button" class="text-muted" data-toggle="modal" data-target="#modal_<?php echo $food['id'] ?>">
@@ -356,13 +356,58 @@ include_once "include/functions.php"
                                 endforeach; ?>
                             </div>
                         </div>
-                        <div id="tab_27" class="tab-pane fade show p-0 ">
+                        <div id="tab_3" class="tab-pane fade show p-0 ">
                             <div class="row g-4">
                                 <!-- in foreach  -->
                                 <?php
                                 $menufood = putmenufood();
                                 foreach ($menufood as $food) :
-                                    if ($food["title_cat"] == "27") :
+                                    if ($food["title_cat"] == "3") :
+                                ?>
+                                        <div class="col-lg-6 mb-2">
+                                            <a type="button" class="text-muted" data-toggle="modal" data-target="#modal_<?php echo $food['id'] ?>">
+
+                                                <div class="d-flex align-items-center">
+                                                    <div class="" style="width:80px">
+                                                        <img class="flex-shrink-0 img-fluid rounded" src="<?php echo "./admin/" . $food['img'] ?>" alt="" style="width:100%">
+                                                    </div>
+                                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                            <span><?php echo $food['title'] ?></span>
+                                                            <span class="text-primary"><?php echo "$" . $food['price'] ?></span>
+                                                        </h5>
+                                                        <small class="fst-italic"><?php echo $food['description'] ?></small>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!-- start modal -->
+                                        <div class="modal fade" id="modal_<?php echo $food['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <!-- <div class="modal-header"> -->
+                                                    <button type="button" class="close text-right p-2" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                    <!-- </div> -->
+                                                    <div class="modal-body">
+                                                        <img class="w-100 h-100" src="<?php echo "./admin/" . $food['img'] ?>" alt="<?php echo $food['title'] ?>">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end modal -->
+                                <?php endif;
+                                endforeach; ?>
+                            </div>
+                        </div>
+                        <div id="tab_4" class="tab-pane fade show p-0 ">
+                            <div class="row g-4">
+                                <!-- in foreach  -->
+                                <?php
+                                $menufood = putmenufood();
+                                foreach ($menufood as $food) :
+                                    if ($food["title_cat"] == "4") :
                                 ?>
                                         <div class="col-lg-6 mb-2">
                                             <a type="button" class="text-muted" data-toggle="modal" data-target="#modal_<?php echo $food['id'] ?>">
