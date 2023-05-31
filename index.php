@@ -30,6 +30,7 @@ include_once "include/functions.php"
     <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
@@ -223,7 +224,7 @@ include_once "include/functions.php"
                     </div>
                     <ul class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
                         <li class="nav-item">
-                            <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 active" data-bs-toggle="pill" href="#tab_25">
+                            <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 text-decoration-none active" data-bs-toggle="pill" href="#tab_25">
                                 <!-- <i class="fa fa-utensils fa-2x text-primary"></i> -->
                                 <i class="fa fa-coffee 'fa-3x text-primary' ?>"></i>
                                 <div class="ps-3">
@@ -233,7 +234,7 @@ include_once "include/functions.php"
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="d-flex align-items-center text-start mx-3 pb-3" data-bs-toggle="pill" href="#tab_26">
+                            <a class="d-flex align-items-center text-start mx-3 pb-3 text-decoration-none" data-bs-toggle="pill" href="#tab_26">
                                 <i class="fa fa-hamburger fa-2x text-primary"></i>
                                 <div class="ps-3">
                                     <small class="text-body">Special</small>
@@ -242,7 +243,7 @@ include_once "include/functions.php"
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="d-flex align-items-center text-start mx-3 me-0 pb-3" data-bs-toggle="pill" href="#tab_27">
+                            <a class="d-flex align-items-center text-start mx-3 me-0 pb-3 text-decoration-none" data-bs-toggle="pill" href="#tab_27">
                                 <i class="fa fa-utensils fa-2x text-primary"></i>
                                 <div class="ps-3">
                                     <small class="text-body">Lovely</small>
@@ -261,19 +262,43 @@ include_once "include/functions.php"
                                     if ($food["title_cat"] == "25") :
                                 ?>
                                         <div class="col-lg-6 mb-2">
-                                            <div class="d-flex align-items-center">
-                                                <div class="" style="width:80px">
-                                                    <img class="flex-shrink-0 img-fluid rounded" src="<?php echo "./admin/" . $food['img'] ?>" alt="" style="width:100%">
+                                            <a type="button" class="text-muted" data-toggle="modal" data-target="#modal_<?php echo $food['id'] ?>">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="" style="width:80px">
+                                                        <img class="flex-shrink-0 img-fluid rounded" src="<?php echo "./admin/" . $food['img'] ?>" alt="" style="width:100%">
+                                                    </div>
+                                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                            <span><?php echo $food['title'] ?></span>
+                                                            <span class="text-primary"><?php echo "$" . $food['price'] ?></span>
+                                                        </h5>
+                                                        <small class="fst-italic"><?php echo $food['description'] ?></small>
+                                                    </div>
                                                 </div>
-                                                <div class="w-100 d-flex flex-column text-start ps-4">
-                                                    <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                        <span><?php echo $food['title'] ?></span>
-                                                        <span class="text-primary"><?php echo "$" . $food['price'] ?></span>
-                                                    </h5>
-                                                    <small class="fst-italic"><?php echo $food['description'] ?></small>
+                                            </a>
+                                        </div>
+
+
+
+                                        <!-- start modal -->
+                                        <div class="modal fade" id="modal_<?php echo $food['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <!-- <div class="modal-header"> -->
+                                                    <button type="button" class="close text-right p-2" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                    <!-- </div> -->
+                                                    <div class="modal-body">
+                                                        <img class="w-100 h-100" src="<?php echo "./admin/" . $food['img'] ?>" alt="<?php echo $food['title'] ?>">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        <!-- end modal -->
+
+
+
                                 <?php endif;
                                 endforeach; ?>
                             </div>
@@ -287,19 +312,38 @@ include_once "include/functions.php"
                                     if ($food["title_cat"] == "26") :
                                 ?>
                                         <div class="col-lg-6 mb-2">
-                                            <div class="d-flex  align-items-center">
-                                                <div class="" style="width:80px">
-                                                    <img class="flex-shrink-0 img-fluid rounded" src="<?php echo "./admin/" . $food['img'] ?>" alt="" style="width:100%">
+                                            <a type="button" class="text-muted" data-toggle="modal" data-target="#modal_<?php echo $food['id'] ?>">
+
+                                                <div class="d-flex  align-items-center">
+                                                    <div class="" style="width:80px">
+                                                        <img class="flex-shrink-0 img-fluid rounded" src="<?php echo "./admin/" . $food['img'] ?>" alt="" style="width:100%">
+                                                    </div>
+                                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                            <span><?php echo $food['title'] ?></span>
+                                                            <span class="text-primary"><?php echo "$" . $food['price'] ?></span>
+                                                        </h5>
+                                                        <small class="fst-italic"><?php echo $food['description'] ?></small>
+                                                    </div>
                                                 </div>
-                                                <div class="w-100 d-flex flex-column text-start ps-4">
-                                                    <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                        <span><?php echo $food['title'] ?></span>
-                                                        <span class="text-primary"><?php echo "$" . $food['price'] ?></span>
-                                                    </h5>
-                                                    <small class="fst-italic"><?php echo $food['description'] ?></small>
+                                            </a>
+                                        </div>
+                                        <!-- start modal -->
+                                        <div class="modal fade" id="modal_<?php echo $food['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <!-- <div class="modal-header"> -->
+                                                    <button type="button" class="close text-right p-2" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                    <!-- </div> -->
+                                                    <div class="modal-body">
+                                                        <img class="w-100 h-100" src="<?php echo "./admin/" . $food['img'] ?>" alt="<?php echo $food['title'] ?>">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        <!-- end modal -->
                                 <?php endif;
                                 endforeach; ?>
                             </div>
@@ -313,19 +357,38 @@ include_once "include/functions.php"
                                     if ($food["title_cat"] == "27") :
                                 ?>
                                         <div class="col-lg-6 mb-2">
-                                            <div class="d-flex align-items-center">
-                                                <div class="" style="width:80px">
-                                                    <img class="flex-shrink-0 img-fluid rounded" src="<?php echo "./admin/" . $food['img'] ?>" alt="" style="width:100%">
+                                            <a type="button" class="text-muted" data-toggle="modal" data-target="#modal_<?php echo $food['id'] ?>">
+
+                                                <div class="d-flex align-items-center">
+                                                    <div class="" style="width:80px">
+                                                        <img class="flex-shrink-0 img-fluid rounded" src="<?php echo "./admin/" . $food['img'] ?>" alt="" style="width:100%">
+                                                    </div>
+                                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                            <span><?php echo $food['title'] ?></span>
+                                                            <span class="text-primary"><?php echo "$" . $food['price'] ?></span>
+                                                        </h5>
+                                                        <small class="fst-italic"><?php echo $food['description'] ?></small>
+                                                    </div>
                                                 </div>
-                                                <div class="w-100 d-flex flex-column text-start ps-4">
-                                                    <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                        <span><?php echo $food['title'] ?></span>
-                                                        <span class="text-primary"><?php echo "$" . $food['price'] ?></span>
-                                                    </h5>
-                                                    <small class="fst-italic"><?php echo $food['description'] ?></small>
+                                            </a>
+                                        </div>
+                                        <!-- start modal -->
+                                        <div class="modal fade" id="modal_<?php echo $food['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <!-- <div class="modal-header"> -->
+                                                    <button type="button" class="close text-right p-2" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                    <!-- </div> -->
+                                                    <div class="modal-body">
+                                                        <img class="w-100 h-100" src="<?php echo "./admin/" . $food['img'] ?>" alt="<?php echo $food['title'] ?>">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        <!-- end modal -->
                                 <?php endif;
                                 endforeach; ?>
                             </div>
@@ -823,6 +886,11 @@ include_once "include/functions.php"
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
