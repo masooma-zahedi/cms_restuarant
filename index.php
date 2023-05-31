@@ -271,6 +271,15 @@ include_once "include/functions.php"
                                 </div>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="d-flex align-items-center text-start mx-3 me-0 pb-3 text-decoration-none" data-bs-toggle="pill" href="#tab_27">
+                                <i class="fa fa-utensils fa-2x text-primary"></i>
+                                <div class="ps-3">
+                                    <small class="text-body">Lovely</small>
+                                    <h6 class="mt-n1 mb-0">dessert</h6>
+                                </div>
+                            </a>
+                        </li>
                     </ul>
                     <div class="tab-content">
                         <div id="tab_25" class="tab-pane fade show p-0 active">
@@ -333,7 +342,6 @@ include_once "include/functions.php"
                                 ?>
                                         <div class="col-lg-6 mb-2">
                                             <a type="button" class="text-muted" data-toggle="modal" data-target="#modal_<?php echo $food['id'] ?>">
-
                                                 <div class="d-flex  align-items-center">
                                                     <div class="" style="width:80px">
                                                         <img class="flex-shrink-0 img-fluid rounded" src="<?php echo "./admin/" . $food['img'] ?>" alt="" style="width:100%">
