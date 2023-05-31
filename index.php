@@ -223,25 +223,6 @@ include_once "include/functions.php"
                         <!-- <i class="fa fa-utensils fa-2x text-primary"></i> -->
                     </div>
                     <ul class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
-<<<<<<< HEAD
-                        <?php
-                        $food_cat = getmenufood_cat();
-                        foreach ($food_cat as $meal) :
-                        ?>
-                            <li class="nav-item">
-                                <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 active" data-bs-toggle="pill" href="#tab_<?php echo $meal['title_cat'] ?>">
-                                    <!-- <i class="fa fa-utensils fa-2x text-primary"></i> -->
-                                    <i class="<?php putIcon($meal['title_cat']) . 'fa-3x text-primary' ?>"></i>
-                                    <div class="ps-3">
-                                        <small class="text-body">Popular</small>
-                                        <h6 class="mt-n1 mb-0"><?php echo $meal['title_cat'] ?></h6>
-                                    </div>
-                                </a>
-                            </li>
-                        <?php endforeach ?>
-                        <!-- <li class="nav-item">
-                            <a class="d-flex align-items-center text-start mx-3 pb-3" data-bs-toggle="pill" href="#tab-2">
-=======
                         <li class="nav-item">
                             <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 text-decoration-none active" data-bs-toggle="pill" href="#tab_25">
                                 <!-- <i class="fa fa-utensils fa-2x text-primary"></i> -->
@@ -254,7 +235,6 @@ include_once "include/functions.php"
                         </li>
                         <li class="nav-item">
                             <a class="d-flex align-items-center text-start mx-3 pb-3 text-decoration-none" data-bs-toggle="pill" href="#tab_26">
->>>>>>> cms1
                                 <i class="fa fa-hamburger fa-2x text-primary"></i>
                                 <div class="ps-3">
                                     <small class="text-body">Special</small>
