@@ -286,9 +286,6 @@ include_once "include/functions.php"
                                                 </div>
                                             </a>
                                         </div>
-
-
-
                                         <!-- start modal -->
                                         <div class="modal fade" id="modal_<?php echo $food['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
@@ -305,9 +302,6 @@ include_once "include/functions.php"
                                             </div>
                                         </div>
                                         <!-- end modal -->
-
-
-
                                 <?php endif;
                                 endforeach; ?>
                             </div>
@@ -366,7 +360,6 @@ include_once "include/functions.php"
                                 ?>
                                         <div class="col-lg-6 mb-2">
                                             <a type="button" class="text-muted" data-toggle="modal" data-target="#modal_<?php echo $food['id'] ?>">
-
                                                 <div class="d-flex align-items-center">
                                                     <div class="" style="width:80px">
                                                         <img class="flex-shrink-0 img-fluid rounded" src="<?php echo "./admin/" . $food['img'] ?>" alt="" style="width:100%">
