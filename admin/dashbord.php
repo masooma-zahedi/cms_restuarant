@@ -91,10 +91,11 @@ if(!isset($_SESSION['username'])){
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            img_about
                         </a>
                         <div class="dropdown-menu p-0  text-light" style="background-color:black" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item badge badge-primary" style="background-color:black" href="dashbord.php?m=clientsay&p=list">List clientsay</a>
-                            <a class="dropdown-item badge badge-primary" style="background-color:black" href="dashbord.php?m=clientsay&p=add">Add clientsay</a>
+                            <a class="dropdown-item badge badge-primary" style="background-color:black" href="dashbord.php?m=clientsay&p=list">List img_about</a>
+                            <a class="dropdown-item badge badge-primary" style="background-color:black" href="dashbord.php?m=clientsay&p=add">Add img_about</a>
                         </div>
                     </li>
 
