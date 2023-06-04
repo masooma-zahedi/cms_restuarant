@@ -5,10 +5,12 @@ $edit = showedit_menu($id);
 if(isset($_POST['btn'])){
     $data = $_POST['frm'];
     edit_menu($data,$id);
-    header("location:dashbord.php?m=menu_site&p=list");
+    // header("location:dashbord.php?m=menu_site&p=list");
 }
 ?>
-
+<script>
+    window.location.href="dashbord.php?m=menu_site&p=list";
+</script>
 <div class="addmenu">
     <div class="card mb-5 ">
         <h2 class="card-body text-center text-warning">

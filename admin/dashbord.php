@@ -25,7 +25,7 @@ if(!isset($_SESSION['username'])){
 <body>
     <div class="container  dashbord">
         <div class="card my-3 ">
-            <h5 class="card-body text-center text-info">
+            <h5 class="card-body text-center text-info"> 
                 Hi<?php echo $_SESSION['username']?>
             </h5>
         </div>
@@ -94,8 +94,8 @@ if(!isset($_SESSION['username'])){
                             img_about
                         </a>
                         <div class="dropdown-menu p-0  text-light" style="background-color:black" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item badge badge-primary" style="background-color:black" href="dashbord.php?m=clientsay&p=list">List img_about</a>
-                            <a class="dropdown-item badge badge-primary" style="background-color:black" href="dashbord.php?m=clientsay&p=add">Add img_about</a>
+                            <a class="dropdown-item badge badge-primary" style="background-color:black" href="dashbord.php?m=about&p=list_img">List img_about</a>
+                            <a class="dropdown-item badge badge-primary" style="background-color:black" href="dashbord.php?m=about&p=add_img">Add img_about</a>
                         </div>
                     </li>
 

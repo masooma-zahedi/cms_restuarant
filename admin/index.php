@@ -2,6 +2,7 @@
 include_once "../include/functions.php";
   if(isset($_POST['btn'])){
     $data= $_POST['frm'];
+    // var_dump($data);die;
     user_login($data);
   }
 ?>
