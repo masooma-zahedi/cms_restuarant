@@ -5,7 +5,7 @@
     </h2>
   </div>
   <div>
-    <form action="../../CMS_retuarant/include/booktable.php?name=hi" method="post" class="border border-secondary p-3">
+    <form action="../../CMS_retuarant/include/booktable.php?name=booktable" method="post" class="border border-secondary p-3">
       <div class="mb-3 ">
         <label for="exampleInputEmail1" class="form-label">name of movie for booktable</label>
         <input type="text" name="update" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
