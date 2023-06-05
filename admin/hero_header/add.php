@@ -1,9 +1,11 @@
 <?php
 if(isset($_POST['btn'])){
     $data = $_POST['frm'];
+    // var_dump($data);die;
     // $titlecat = selectparentfood($data['parent']);
     $img = uploader('img','images/hero_header/',"hero",'header');
     add_heroheader($data,$img);
+    echo '<script>window.location.href="dashbord.php?m=index&p=index&hero_heder=added";</script>';
 }
 ?>
 
