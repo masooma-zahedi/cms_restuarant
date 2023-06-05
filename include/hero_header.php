@@ -10,7 +10,7 @@ function add_heroheader($data, $img)
 function update_heroheader()
 {
     $connect = config();
-    $sql = "SELECT * FROM hero_header_tbl";
+    $sql = "SELECT * FROM hero_header_tbl";  
     $row = mysqli_query($connect, $sql);
     $res = mysqli_fetch_assoc($row);
     return $res;

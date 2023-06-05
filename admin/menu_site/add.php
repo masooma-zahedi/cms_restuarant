@@ -10,7 +10,7 @@ if(isset($_POST['btn'])){
 <div class="addmenu">
     <div class="card mb-5 ">
         <h2 class="card-body text-center text-warning">
-            Add New Menu
+            Add New Menu 
         </h2>
     </div>
     <form method="post" class="border border-secondary p-3 ">

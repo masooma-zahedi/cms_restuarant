@@ -11,7 +11,7 @@ if(isset($_POST['btn'])){
 <div class="addmenu">
     <div class="card mb-5 ">
         <h2 class="card-body text-center text-warning">
-            Add New client say
+            Add New client say 
         </h2>
     </div>
     <form method="post" enctype="multipart/form-data" class="border border-secondary p-3 ">

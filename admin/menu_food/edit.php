@@ -5,11 +5,10 @@ $edit = showedit_menufood($id);
 // update
 if(isset($_POST['btn'])){
     $data = $_POST['frm'];
-    // var_dump($data["parent"]);
     $titlecat = selectparentfood($data['parent']);
     $img = uploader('img','images/menufood/',$titlecat,'namefood');
     edit_menufood($data,$id,$img);
-    header("location:dashbord.php?m=menu_food&p=list");
+    echo '<script>window.location.href="dashbord.php?m=menu_food&p=list";</script>';
 }
 ?>
 <div class="addmenu">
@@ -31,31 +30,20 @@ if(isset($_POST['btn'])){
             <label for="exampleInputEmail1" class="form-label">Price</label>
             <input type="number" name="frm[price]" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?php echo $edit['price'] ?>">
         </div>
-        <!-- <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">title_cat</label>
-            <input type="text" name="frm[title_cat]" class="form-control" id="exampleInputPassword1" value="<?php echo $edit['title_cat'] ?>">
-        </div> -->
         <div class="mb-3">
         <label for="select ">Menu Location</label>
-        <!-- <div class="border border-danger"> -->
             <select class="form-control border p-1 mb-3" name="frm[parent]" aria-label="Default select example">
-                <!-- <option value="0">Menu Level One</option> -->
                 <?php
                     $submenufood = submenufood();
                     foreach($submenufood as $subs){
                         echo "<option value='$subs[id]'";
-                        // ////////////////////////////////////// work
                         if($edit['title_cat'] == $subs['id']){
                             echo " selected";
                         }
                         echo ">$subs[title_cat]</option>";
                     }
                 ?>
-
-                <!-- <option value="1">Menu Level Two</option>
-                <option value="2">Menu Level Three</option> -->
             </select>
-        <!-- </div> -->
         </div>
 
         <div class="mb-3">

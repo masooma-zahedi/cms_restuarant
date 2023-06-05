@@ -8,6 +8,7 @@ if(isset($_POST['btn'])){
     $data = $_POST['frm'];
     edit_menufood_cat($data,$id);
     header("location:dashbord.php?m=menu_food_cat&p=list");
+    echo '<script>window.location.href="dashbord.php?m=menu_food_cat&p=list";</script>';
 }
 ?>
 <div class="addmenu">

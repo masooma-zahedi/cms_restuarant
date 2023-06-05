@@ -11,7 +11,7 @@ if(isset($_POST['btn'])){
     <div class="card mb-5 ">
         <h2 class="card-body text-center text-warning">
             Add New Menu Food_category
-        </h2>
+        </h2> 
     </div>
     <form method="post" class="border border-secondary p-3 ">
         <div class="mb-3 ">

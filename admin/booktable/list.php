@@ -5,7 +5,7 @@
     </h2>
   </div>
   <div>
-    <form action="../../CMS_retuarant/include/booktable.php?name=hi" method="post" class="border border-secondary p-3">
+    <form action="../../CMS_retuarant/include/booktable.php?name=booktable" method="post" class="border border-secondary p-3">
       <div class="mb-3 ">
         <label for="exampleInputEmail1" class="form-label">name of movie for booktable</label>
         <input type="text" name="update" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
@@ -21,6 +21,7 @@
         <th scope="col">date</th>
         <th scope="col">numpeople</th>
         <th scope="col">massage</th>
+        <th scope="col " >delete</th>
       </tr>
     </thead>
     <tbody class="">
@@ -44,7 +45,7 @@
           <td class="text-center"><?php echo $list['numpeople'] ?></td>
           <td><?php echo $list['massage'] ?></td>
           <!-- <td><a href="dashbord.php?m=menu_food_cat&p=edit&id=<?php echo $list['id'] ?>"><i class="fas fa-edit" style="color:brown"></i></a></td> -->
-          <td><a href="dashbord.php?m=booktable&p=delete&id=<?php echo $list['id'] ?>"><i class="fa-solid fa-trash" style="color:red"></a></i></td>
+          <td class="text-center "><a  href="dashbord.php?m=booktable&p=delete&id=<?php echo $list['id'] ?>"><i class="fa-solid fa-trash text-center" style="color:red"></a></i></td>
         </tr>
       <?php
       endforeach;
