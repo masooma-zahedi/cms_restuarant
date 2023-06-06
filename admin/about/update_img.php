@@ -9,10 +9,6 @@ if(isset($_POST['btn'])){
     $img3 = uploader('img_down_left','images/about/',"img",'-');
     $img4 = uploader('img_down_right','images/about/',"img",'-');
     update_img_about( $img1,$img2,$img3,$img4);
-    // var_dump(show_img_about());
-    // $u = show_img_about();
-    // echo $u['img_up_right'];
-
 
 }
 ?>
