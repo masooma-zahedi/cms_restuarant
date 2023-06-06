@@ -1,10 +1,22 @@
 <?php
-function add_img_about($data, $img)
+include_once "functions.php";
+
+function update_img_about( $img1,$img2,$img3,$img4)
 {
     $connect = config();
-    $sql = "INSERT INTO img_about_tbl (name,img) VALUES ('$data[name]','$img')";
+    $sql = "UPDATE img_about_tbl SET img_up_right='$img1',img_up_left='$img2',img_down_left='$img3',img_down_right='$img4'  WHERE id ='1'";
     mysqli_query($connect, $sql);
 }
+
+function show_img_about(){
+    $connect = config();
+    $sql = "SELECT * FROM img_about_tbl";
+    $row = mysqli_query($connect,$sql);
+    $res = mysqli_fetch_assoc($row);
+    return $res;
+}
+
+
 
 
 
@@ -30,24 +42,15 @@ function add_img_about($data, $img)
 //     return $result;
 // }
 
-function delete_clientsay($id)
-{
-    $connect = config();
-    $sql = "DELETE FROM clientsay_tbl WHERE id = '$id'";
-    mysqli_query($connect, $sql);
-}
+// function delete_clientsay($id)
+// {
+//     $connect = config();
+//     $sql = "DELETE FROM clientsay_tbl WHERE id = '$id'";
+//     mysqli_query($connect, $sql);
+// }
 
 
 // for web page
-function showclientsay(){
-    $connect = config();
-    $sql = "SELECT * FROM clientsay_tbl";
-    $row = mysqli_query($connect,$sql);
-    while($res = mysqli_fetch_assoc($row)){
-        $result[] = $res;
-    }
-    return $result;
-}
 
 
 

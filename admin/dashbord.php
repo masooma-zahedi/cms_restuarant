@@ -90,7 +90,7 @@ if(!isset($_SESSION['username'])){
                         </a>
                         <div class="dropdown-menu p-0  text-light" style="background-color:black" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item badge badge-primary" style="background-color:black" href="dashbord.php?m=about&p=list_img">List img_about</a>
-                            <a class="dropdown-item badge badge-primary" style="background-color:black" href="dashbord.php?m=about&p=add_img">Add img_about</a>
+                            <a class="dropdown-item badge badge-primary" style="background-color:black" href="dashbord.php?m=about&p=update_img">Update img_about</a>
                         </div>
                     </li>
 
