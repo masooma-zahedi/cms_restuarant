@@ -1,15 +1,16 @@
 <?php
-if(isset($_POST['btn'])){
+if (isset($_POST['btn'])) {
     $img_up_right = $_FILES['img_up_right'];
     $img_up_left = $_FILES['img_up_left'];
     $img_down_left = $_FILES['img_down_left'];
     $img_down_right = $_FILES['img_down_right'];
-    $img1 = uploader('img_up_right','images/about/',"img",'-');
-    $img2 = uploader('img_up_left','images/about/',"img",'-');
-    $img3 = uploader('img_down_left','images/about/',"img",'-');
-    $img4 = uploader('img_down_right','images/about/',"img",'-');
-    update_img_about( $img1,$img2,$img3,$img4);
-
+    $img1 = uploader('img_up_right', 'images/about/', "img", '-');
+    $img2 = uploader('img_up_left', 'images/about/', "img", '-');
+    $img3 = uploader('img_down_left', 'images/about/', "img", '-');
+    $img4 = uploader('img_down_right', 'images/about/', "img", '-');
+    $datanew =$_POST['editor1'];
+    update_img_about($img1, $img2, $img3, $img4,$datanew);
+    
 }
 ?>
 
@@ -22,6 +23,13 @@ if(isset($_POST['btn'])){
         </h2>
     </div>
     <form method="post" enctype="multipart/form-data" class="border border-secondary p-3 ">
+        <div class="mb-3 border border-primary p-2">
+            <label for="exampleInputEmail1" class="form-label">about text </label>
+            <textarea name="editor1" id="editor1"></textarea>
+            <script>
+                        CKEDITOR.replace( 'editor1' );
+                </script>
+        </div>
         <div class="mb-3 border border-primary p-2">
             <label for="exampleInputEmail1" class="form-label">image up_left </label>
             <input type="file" name="img_up_right" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
