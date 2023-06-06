@@ -277,7 +277,7 @@ include_once "include/functions.php"
                                 foreach ($menufood as $key=>$food) :
                                     if ($key <= 10) :
                                 ?>
-                                        <div class="col-lg-6 mb-2 " style="padding-left: 100px;">
+                                        <div class="col-lg-6 mb-2 " >
                                             <a type="button" class="text-muted" data-toggle="modal" data-target="#modal_<?php echo $food['id'] ?>">
                                                 <div class="d-flex align-items-center">
                                                     <div class=" rounded" style="width:80px ;height:70px  ">
