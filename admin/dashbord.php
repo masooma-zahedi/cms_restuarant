@@ -68,6 +68,16 @@ if(!isset($_SESSION['username'])){
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            about us
+                        </a>
+                        <div class="dropdown-menu p-0  text-light" style="background-color:black" aria-labelledby="navbarDropdown">
+                            <!-- <a class="dropdown-item badge badge-primary" style="background-color:black" href="dashbord.php?m=menu_food&p=list">List MenuFood</a> -->
+                            <a class="dropdown-item badge badge-primary" style="background-color:black" href="dashbord.php?m=about&p=update_img">update about</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Hero_Header
                         </a>
                         <div class="dropdown-menu p-0  text-light" style="background-color:black" aria-labelledby="navbarDropdown">
@@ -85,11 +95,27 @@ if(!isset($_SESSION['username'])){
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Contact
+                        </a>
+                        <div class="dropdown-menu p-0  text-light" style="background-color:black" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item badge badge-primary" style="background-color:black" href="dashbord.php?m=contact&p=list">List Contact</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             img_about
                         </a>
                         <div class="dropdown-menu p-0  text-light" style="background-color:black" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item badge badge-primary" style="background-color:black" href="dashbord.php?m=about&p=list_img">List img_about</a>
+                            <a class="dropdown-item badge badge-primary" style="background-color:black" href="dashbord.php?m=about&p=list">List img_about</a>
                             <a class="dropdown-item badge badge-primary" style="background-color:black" href="dashbord.php?m=about&p=update_img">Update img_about</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            setting
+                        </a>
+                        <div class="dropdown-menu p-0  text-light" style="background-color:black" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item badge badge-primary" style="background-color:black" href="dashbord.php?m=setting&p=edit">edit setting</a>
                         </div>
                     </li>
 
@@ -106,7 +132,14 @@ if(!isset($_SESSION['username'])){
             </div>
         </div>
     </div>
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

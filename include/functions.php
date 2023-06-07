@@ -67,3 +67,6 @@ switch ($m) {
 }
 
 include_once "login.php";
+include_once "contact.php";
+include_once "setting.php";
+$setting = setting();
