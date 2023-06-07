@@ -40,6 +40,7 @@ switch ($m) {
         include_once "booktable.php";
         include_once "hero_header.php";
         include_once "clientsay.php";
+        include_once "about.php";
         break;
     case 'menu_site':
         include_once "menu_site.php";
@@ -59,7 +60,13 @@ switch ($m) {
     case  'clientsay':
         include_once "clientsay.php";
         break;
+    case  'about':
+        include_once "about.php";
+        break;
 
 }
 
 include_once "login.php";
+include_once "contact.php";
+include_once "setting.php";
+$setting = setting();

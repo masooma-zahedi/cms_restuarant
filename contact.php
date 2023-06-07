@@ -1,7 +1,9 @@
 <?php
+include_once "./include/functions.php";
 if(isset($_POST['btn'])){
-    $name = $_POST['name'];
-    echo $name;
+   $data = $_POST['frm'];
+   var_dump($data);
+   add_contact($data);
 }
 ?>
 
@@ -132,25 +134,25 @@ if(isset($_POST['btn'])){
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
+                                            <input type="text" class="form-control" id="name" name="frm[name]" placeholder="Your Name">
                                             <label for="name">Your Name</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                            <input type="email" name="frm[email]" class="form-control" id="email" placeholder="Your Email">
                                             <label for="email">Your Email</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                            <input type="text" name="frm[subject]" class="form-control" id="subject" placeholder="Subject">
                                             <label for="subject">Subject</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
+                                            <textarea class="form-control" name="frm[message]" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
                                             <label for="message">Message</label>
                                         </div>
                                     </div>
