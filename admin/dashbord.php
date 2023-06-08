@@ -112,6 +112,15 @@ if(!isset($_SESSION['username'])){
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Our Team
+                        </a>
+                        <div class="dropdown-menu p-0  text-light" style="background-color:black" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item badge badge-primary" style="background-color:black" href="dashbord.php?m=ourteam&p=list">List team</a>
+                            <a class="dropdown-item badge badge-primary" style="background-color:black" href="dashbord.php?m=ourteam&p=add">add team</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             setting
                         </a>
                         <div class="dropdown-menu p-0  text-light" style="background-color:black" aria-labelledby="navbarDropdown">

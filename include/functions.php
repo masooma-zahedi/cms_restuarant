@@ -41,6 +41,7 @@ switch ($m) {
         include_once "hero_header.php";
         include_once "clientsay.php";
         include_once "about.php";
+        include_once "ourteam.php";
         break;
     case 'menu_site':
         include_once "menu_site.php";
@@ -62,6 +63,9 @@ switch ($m) {
         break;
     case  'about':
         include_once "about.php";
+        break;
+    case  'ourteam':
+        include_once "ourteam.php";
         break;
 
 }
